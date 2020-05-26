@@ -21,7 +21,7 @@ unique_ptr<HotDrink> make_drink(string type)
   return drink;
 }
 
-int main53()
+int main()
 {
   auto d = make_drink("tea");
 
