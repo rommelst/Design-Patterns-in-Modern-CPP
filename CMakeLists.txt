@@ -1,23 +1,29 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(DesignPatterns LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(Builder LANGUAGES CXX)
-add_executable(Builder
-    03_Builder/builder.cpp
-    03_Builder/BuilderCodingExercise.cpp
-    03_Builder/groovy_style.cpp
-    03_Builder/BuilderFacets/Facets.cpp
-    03_Builder/BuilderFacets/Person.cpp
-    03_Builder/BuilderFacets/PersonBuilder.cpp
-)
+project(DesignPatterns_DmitriNesteruk LANGUAGES CXX)
 
-
-
-project(Factory LANGUAGES CXX)
-add_executable(Factory 04_Factories/AbstractFactory.cpp)
-
-
+add_subdirectory(02_SOLID_Design_Principles)
+add_subdirectory(03_Builder)
+add_subdirectory(04_Factory)
+add_subdirectory(05_Prototype)
+add_subdirectory(06_Singleton)
+add_subdirectory(07_Adapter)
+add_subdirectory(08_Bridge)
+add_subdirectory(09_Composite)
+add_subdirectory(10_Decorator)
+add_subdirectory(12_Flyweight)
+add_subdirectory(13_Proxy)
+add_subdirectory(14_ChainOfResponsability)
+add_subdirectory(15_Command)
+add_subdirectory(16_Interpreter)
+#add_subdirectory(17_Iterator)
+add_subdirectory(18_Mediator)
+add_subdirectory(19_Memento)
+add_subdirectory(20_Observer)
+add_subdirectory(21_State)
+add_subdirectory(22_Strategy)
+add_subdirectory(23_TemplateMethod)
+add_subdirectory(24_Visitor)

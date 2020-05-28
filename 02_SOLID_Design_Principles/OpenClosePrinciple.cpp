@@ -130,7 +130,7 @@ template <typename T> struct AndSpecification : Specification<T>
 
 // new:
 
-int main()
+int open_close_main()
 {
   Product apple{"Apple", Color::green, Size::small};
   Product tree{"Tree", Color::green, Size::large};

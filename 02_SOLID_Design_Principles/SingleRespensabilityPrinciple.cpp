@@ -45,7 +45,7 @@ struct PersistenceManager
   }
 };
 
-void main()
+int single_responsability_main()
 {
   Journal journal{"Dear Diary"};
   journal.add("I ate a bug");
@@ -55,4 +55,6 @@ void main()
 
   PersistenceManager pm;
   pm.save(journal, "diary.txt");
+
+  return 0;
 }

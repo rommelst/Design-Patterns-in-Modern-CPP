@@ -94,7 +94,7 @@ private:
   ostringstream oss;
 };
 
-int main()
+int visitor_acyclic_main()
 {
   auto e = new AdditionExpression{
     new DoubleExpression{1},

@@ -1,4 +1,6 @@
-#include "Headers.hpp"
+#include "headers.hpp"
+
+#include <numeric>
 
 //class Creature
 //{
@@ -66,7 +68,7 @@ public:
   void set_intelligence(int value) { abilities[intl] = value; }
 
   int sum() const {
-    return accumulate(abilities.begin(), abilities.end(), 0);
+    return std::accumulate(abilities.begin(), abilities.end(), 0);
   }
 
   double average() const {
@@ -78,7 +80,8 @@ public:
   }
 };
 
-int main(int ac, char* av[])
+
+int array_back_props_main()
 {
   Creature orc;
   orc.set_strength(16);
@@ -93,3 +96,4 @@ int main(int ac, char* av[])
 
   return 0;
 }
+

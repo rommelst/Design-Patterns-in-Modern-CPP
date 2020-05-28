@@ -104,7 +104,7 @@ void boost_flyweight()
   //cout << (&jane_doe.last_name == &john_doe.last_name);
 }
 
-int main_()
+int flyweight_main()
 {
   naive_flyweight();
   boost_flyweight();

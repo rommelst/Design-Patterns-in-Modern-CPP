@@ -96,7 +96,7 @@ public:
 };
 
 // similar idea, but Query instead of Command
-int main(int ac, char* av)
+int cor_broker_main(int ac, char* av)
 {
   Game game;
   Creature goblin{ game, "Strong Goblin", 2, 2 };

@@ -65,7 +65,7 @@ struct ExpressionPrinter
   string str() const { return oss.str(); }
 };
 
-void main_3_()
+void visitor_reflective_main()
 {
   auto e = new AdditionExpression{
     new DoubleExpression{ 1 },

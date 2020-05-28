@@ -1,4 +1,4 @@
-#include "person.hpp"
+#include "Person.hpp"
 #include "ChatRoom.hpp"
 
 void ChatRoom::broadcast(const string &origin, const string &message)

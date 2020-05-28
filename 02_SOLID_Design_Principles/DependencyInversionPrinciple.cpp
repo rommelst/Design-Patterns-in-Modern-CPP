@@ -72,7 +72,7 @@ struct Research // high-level
 //  }
 };
 
-int main()
+int dependency_inversion_main()
 {
   Person parent{"John"};
   Person child1{"Chris"};

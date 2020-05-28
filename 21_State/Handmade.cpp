@@ -77,7 +77,7 @@ inline ostream& operator<<(ostream& os, const Trigger& t)
   return os;
 }
 
-int main_f(char* argv[])
+int handmade_main(char* argv[])
 {
   map<State, vector<pair<Trigger, State>>> rules;
 

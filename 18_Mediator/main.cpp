@@ -1,10 +1,13 @@
-#include "headers.hpp"
+//#include "headers.hpp"
 
 #include "Person.hpp"
 #include "ChatRoom.hpp"
 
+int soccer_main();
 int main()
 {
+    soccer_main();
+
   ChatRoom room;
 
   Person john{"John"};

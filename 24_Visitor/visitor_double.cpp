@@ -133,7 +133,7 @@ void ExpressionEvaluator::visit(SubtractionExpression* se)
   result -= temp;
 }
 
-void main()
+int visitor_double_main()
 {
   auto e = new AdditionExpression{
     new DoubleExpression{ 1 },

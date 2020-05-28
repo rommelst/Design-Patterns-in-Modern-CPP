@@ -1,7 +1,7 @@
 ﻿#include <gtest/gtest.h>
-#include "../../../../../gtest/include/gtest/gtest.h"
-#include "../../../../../gtest/include/gtest/internal/gtest-internal.h"
-#include "../../../../../gtest/include/gtest/gtest_pred_impl.h"
+#include "gtest/gtest.h"
+#include "gtest/internal/gtest-internal.h"
+#include "gtest/gtest_pred_impl.h"
 
 struct Square
 {

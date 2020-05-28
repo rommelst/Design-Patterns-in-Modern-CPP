@@ -93,7 +93,7 @@ struct CompositeBankAccountCommand
   }
 };
 
-int main_987()
+int command_main()
 {
   BankAccount ba;
   /*vector<BankAccountCommand> commands{*/

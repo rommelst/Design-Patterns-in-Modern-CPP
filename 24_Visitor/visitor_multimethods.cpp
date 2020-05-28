@@ -61,7 +61,7 @@ void collide(GameObject& first, GameObject& second)
 	it->second();
 }
 
-int main__(int argc, char* argv[])
+int visitor_multimethods_main(int argc, char* argv[])
 {
 	ArmedSpaceship spaceship;
 	Asteroid asteroid;

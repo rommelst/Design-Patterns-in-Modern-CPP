@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <sstream>
-#include "../../../../../gtest/include/gtest/gtest.h"
+#include "gtest/gtest.h"
 using namespace std;
 
 struct Renderer
@@ -75,7 +75,7 @@ namespace
   TEST_F(Evaluate, SimpleTest)
   {
     ASSERT_EQ("Drawing Square as lines",
-      Square{VectorRenderer{}}.str())
+      Square{VectorRenderer{}}.str());
   }
 
 } // namespace

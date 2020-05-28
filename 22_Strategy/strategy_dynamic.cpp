@@ -80,7 +80,7 @@ private:
   unique_ptr<ListStrategy> list_strategy;
 };
 
-int main_()
+int dynamic_main()
 {
   // markdown
   TextProcessor tp;

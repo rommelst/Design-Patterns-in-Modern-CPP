@@ -1,4 +1,4 @@
-#include "Singleton.hpp"
+#include "Singleton.h"
 #include <gtest/gtest.h>
 
 //TEST(DatabaseTests, IsSingletonTest)

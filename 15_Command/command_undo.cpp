@@ -140,7 +140,7 @@ struct MoneyTransferCommand : DependentCompositeCommand
 };
 
 
-int main()
+int command_undo_main()
 {
   BankAccount ba;
   /*vector<BankAccountCommand> commands{*/

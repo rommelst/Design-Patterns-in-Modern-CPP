@@ -46,7 +46,7 @@ void process(Rectangle& r)
     << ", got " << r.area() << std::endl;
 }
 
-int main342342()
+int liskov_substitution_main()
 {
   Rectangle r{ 5,5 };
   process(r);

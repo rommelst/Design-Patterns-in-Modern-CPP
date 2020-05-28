@@ -77,7 +77,7 @@ struct Coach
   }
 };
 
-int main()
+int soccer_main()
 {
   Game game;
   Player player{ "Sam", game };

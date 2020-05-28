@@ -85,7 +85,7 @@ struct NeuronLayer : vector<Neuron>, SomeNeurons<NeuronLayer>
   }
 };
 
-void main()
+int neuron_main()
 {
   Neuron n1, n2;
   n1.connect_to(n2);

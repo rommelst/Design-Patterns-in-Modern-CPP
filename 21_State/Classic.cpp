@@ -66,7 +66,7 @@ void OffState::on(LightSwitch* ls)
   delete this;
 }
 
-void main_3()
+void classic_main()
 {
   LightSwitch ls;
   ls.on();

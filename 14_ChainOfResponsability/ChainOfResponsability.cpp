@@ -103,7 +103,7 @@ public:
   }
 };
 
-int main_()
+int chain_of_responsability_main()
 {
   Creature goblin{ "Goblin", 1, 1 };
   CreatureModifier root{ goblin };
