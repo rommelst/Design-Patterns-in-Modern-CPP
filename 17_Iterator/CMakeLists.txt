@@ -1,8 +1,11 @@
 project(Iterator LANGUAGES CXX)
+add_compile_options(-std=c++20)
+add_compile_options(-fcoroutines)
 add_executable(Iterator
-    facade.cpp
+#    facade.cpp
     iterator.cpp
-    IteratorCodingExercise.cpp
+#    IteratorCodingExercise.cpp
+    binary_tree_iterator.cpp
 )
 enable_testing()
 include_directories(${GTEST_HOME}/include)

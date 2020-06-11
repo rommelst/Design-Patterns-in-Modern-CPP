@@ -2,11 +2,32 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include <experimental/coroutine>
-#include <experimental/generator>
+#include <coroutine>
+#include <algorithm>
 using namespace std;
 
-#include "recursive_generator.h"
+//#include "recursive_generator.h"
+
+
+template <typename T>
+struct generator
+{
+  T first;
+  T last;
+
+  struct iterator{};
+
+  iterator begin()
+  {
+    return{ first };
+  }
+
+  iterator end()
+  {
+    return{ last };
+  }
+};
+
 
 template <typename T> struct BinaryTree;
 
@@ -129,14 +150,14 @@ template <typename T> struct BinaryTree
 
   // todo: postorder iterator using recursive coroutines
 
-  experimental::generator<Node<T>*> post_order()
+  generator<Node<T>*> post_order()
   {
     return post_order_impl(root);
   }
 
 private:
   // or use a recursive_generator
-  experimental::generator<Node<T>*> post_order_impl(Node<T>* node)
+  generator<Node<T>*> post_order_impl(Node<T>* node)
   {
     if (node)
     {
@@ -229,8 +250,8 @@ void binary_tree_iterator()
 
 int main()
 {
-  //std_iterators();
-  binary_tree_iterator();
+  std_iterators();
+//  binary_tree_iterator();
 
   getchar();
   return 0;
