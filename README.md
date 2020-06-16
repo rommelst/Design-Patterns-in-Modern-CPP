@@ -11,7 +11,7 @@
 |:--:|:--:|:--:|
 | Builder    |  Adapter  | Chain of responsability |
 | Factories  |  Bridge   | Command |
-| [Prototype]([https://github.com/rommelst/Design-Patterns-in-Modern-CPP/tree/master/05_Prototype](https://github.com/rommelst/Design-Patterns-in-Modern-CPP/tree/master/05_Prototype))  | Composite | Interpreter |
+| [Prototype](https://github.com/rommelst/Design-Patterns-in-Modern-CPP/tree/master/05_Prototype) | Composite | Interpreter |
 | Singleton  | Decorator | Iterator |
 |            | Façade    | Mediator |
 |            | Flyweight | Memento |
