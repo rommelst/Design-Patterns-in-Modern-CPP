@@ -20,4 +20,5 @@
 ## Glossary
 
 **Shallow copy**: copy only the stack of the object.
+
 **Deep copy**: copy both stack and heap of the object.
