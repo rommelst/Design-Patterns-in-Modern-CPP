@@ -18,6 +18,7 @@ struct Field
   {
     return os << obj.type << " " << obj.name << ";";
   }
+
 };
 
 struct Class
@@ -127,4 +128,13 @@ namespace
     trim(printed);
     ASSERT_EQ("class Person\n{\n  string name;\n  int age;\n};", printed);
   }
+
+
 } // namespace
+
+
+int main(int ac, char* av[])
+{
+    testing::InitGoogleTest(&ac, av);
+    return RUN_ALL_TESTS();
+}

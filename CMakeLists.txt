@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(DesignPatterns_DmitriNesteruk LANGUAGES CXX)
 
 add_subdirectory(02_SOLID_Design_Principles)
-#add_subdirectory(03_Builder)
+add_subdirectory(03_Builder)
 #add_subdirectory(04_Factory)
 add_subdirectory(05_Prototype)
 #add_subdirectory(06_Singleton)

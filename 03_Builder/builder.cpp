@@ -71,7 +71,7 @@ struct HtmlBuilder
   HtmlElement root;
 };
 
-int demo()
+int main()
 {
   // <p>hello</p>
   auto text = "hello";
@@ -88,7 +88,7 @@ int demo()
   for (auto w : words)
     oss << "  <li>" << w << "</li>";
   oss << "</ul>";
-  printf(oss.str().c_str());
+  printf("%s",oss.str().c_str());
 
   // easier
   HtmlBuilder builder{ "ul" };
@@ -100,6 +100,8 @@ int demo()
     ->add_child_2("li", "hello")->add_child_2("li", "world");
   cout << builder2 << endl;
 
-  getchar();
+
+  HtmlElement b = HtmlElement::build("ul")->add_child("","");
+
   return 0;
 }

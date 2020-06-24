@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 
+class PersonBuilderBase;
+class Person;
+
 class PersonAddressBuilder : public PersonBuilderBase
 {
   typedef PersonAddressBuilder Self;
