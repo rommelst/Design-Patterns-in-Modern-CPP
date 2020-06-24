@@ -6,7 +6,7 @@
 
 >It takes as base reference the Udemy Course taught by Dmitri Nesteruk  and many changes were made on code to improve my own cognition process. As said by the teacher, the code does not follow the lastest better practices like move semantics, private members, virtual destructors, and so on once the main goal is keep the focus on the design patterns pratices.
 
-## Referencias
+## References
 
 Udemy course [Design Patterns in Modern C++](https://www.udemy.com/course/patterns-cplusplus) by Dmitri Nesteruk.
 
