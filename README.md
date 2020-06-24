@@ -14,7 +14,7 @@ Udemy course [Design Patterns in Modern C++](https://www.udemy.com/course/patter
 
 | Creational | Structural | Behavioral |
 |:--:|:--:|:--:|
-| Builder    |  Adapter  | Chain of responsability |
+| [Builder](https://github.com/rommelst/Design-Patterns-in-Modern-CPP/tree/master/03_Builder)    |  Adapter  | Chain of responsability |
 | Factories  |  Bridge   | Command |
 | [Prototype](https://github.com/rommelst/Design-Patterns-in-Modern-CPP/tree/master/05_Prototype) | Composite | Interpreter |
 | Singleton  | Decorator | Iterator |
