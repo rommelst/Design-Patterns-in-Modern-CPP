@@ -1,9 +1,19 @@
-cmake_minimum_required(VERSION 3.5)
-
-#set(CMAKE_CXX_STANDARD 2a)
+cmake_minimum_required(VERSION 3.30)
+project(DesignPatterns::DmitriNesteruk LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-project(DesignPatterns_DmitriNesteruk LANGUAGES CXX)
+include(GoogleTest)
+find_package(GTest ${GTest_VERSION} CONFIG REQUIRED)
+if (NOT GTest_FOUND)
+    message(NOTICE "GTest is not set.\nDefine the variable GTest_DIR=<path to GTestConfig.cmake file>")
+else()
+    message(STATUS "GTest found. GTest_DIR is '${GTest_DIR}'.")
+endif()
+
+
+
 
 add_subdirectory(02_SOLID_Design_Principles)
 add_subdirectory(03_Builder)
@@ -13,7 +23,7 @@ add_subdirectory(05_Prototype)
 #add_subdirectory(07_Adapter)
 #add_subdirectory(08_Bridge)
 #add_subdirectory(09_Composite)
-#add_subdirectory(10_Decorator)
+add_subdirectory(10_Decorator)
 #add_subdirectory(12_Flyweight)
 #add_subdirectory(13_Proxy)
 #add_subdirectory(14_ChainOfResponsability)

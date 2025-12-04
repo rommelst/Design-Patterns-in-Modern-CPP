@@ -6,6 +6,7 @@ using namespace std;
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
 
+
 struct Shape
 {
   virtual string str() const = 0;
@@ -149,32 +150,6 @@ template <typename T> struct TransparentShape2 : T
   }
 };
 
-void wrapper()
-{
-  Circle circle{ 5 };
-  cout << circle.str() << endl;
-
-  ColoredShape red_circle{ circle, "red" };
-  cout << red_circle.str() << endl;
-
-  //red_circle.resize(); // oops
-
-  TransparentShape red_half_visible_circle{ red_circle, 128 };
-  cout << red_half_visible_circle.str() << endl;
-}
-
-void mixin_inheritance()
-{
-  // won't work without a default constructor
-  ColoredShape2<Circle> green_circle{ "green" };
-  green_circle.radius = 123;
-  cout << green_circle.str() << endl;
-
-  TransparentShape2<ColoredShape2<Square>> blue_invisible_square{ 0 };
-  blue_invisible_square.color = "blue";
-  blue_invisible_square.side = 321;
-  cout << blue_invisible_square.str() << endl;
-}
 
 struct Logger
 {
@@ -260,45 +235,90 @@ double add(double a, double b)
   return a + b;
 }
 
-void function_decorator()
-{
-  //Logger([]() {cout << "Hello" << endl; }, "HelloFunction")();
-  
-  // cannot do this
-  //make_logger2([]() {cout << "Hello" << endl; }, "HelloFunction")();
-  auto call = make_logger2([]() {cout << "Hello!" << endl; }, "HelloFunction");
-  call();
+namespace dynamic_decorator {
 
-  auto logged_add = make_logger3(add, "Add");
-  auto result = logged_add(2, 3);
-}
-
-void constructor_forwarding()
-{
-  struct NotAShape
+  namespace aggregation
   {
-    virtual string str() const { return string{}; }
-  };
 
-  // we don't want this to be legal, thus a static_assert above
-  //ColoredShape2<NotAShape> legal;
+    void class_decorator()
+    {
+      std::cout << "*** " << __FUNCTION__ << " -----------------------------------------------------------------------------" << std::endl;
 
-  // no code completion for this case
-  // can comment out argument, too! (default constructor)
-  TransparentShape2<Square> hidden_square{ 1, 2 };
-  cout << hidden_square.str() << endl;
+      Circle circle{ 5 };
+      cout << circle.str() << endl;
 
-  ColoredShape2<TransparentShape2<Square>> sq = { "red", 51, 5 };
-  cout << sq.str() << endl;
+      ColoredShape red_circle{ circle, "red" };
+      cout << red_circle.str() << endl;
+      // red_circle.resize(); // oops
+
+      TransparentShape red_half_visible_circle{ red_circle, 128 };
+      cout << red_half_visible_circle.str() << endl;
+    }
+
+
+
+}}
+
+namespace static_decorator {
+
+  void function_decorator()
+  {
+    std::cout << "*** " << __FUNCTION__ << " -----------------------------------------------------------------------------" << std::endl;
+    //Logger([]() {cout << "Hello" << endl; }, "HelloFunction")();
+
+    // cannot do this
+    //make_logger2([]() {cout << "Hello" << endl; }, "HelloFunction")();
+    auto call = make_logger2([]() {cout << "Hello!" << endl; }, "HelloFunction");
+    call();
+
+    auto logged_add = make_logger3(add, "Add");
+    auto result = logged_add(2, 3);
+  }
+
+  void constructor_forwarding()
+  {
+    std::cout << "*** " << __FUNCTION__ << " -----------------------------------------------------------------------------" << std::endl;
+
+    struct NotAShape
+    {
+      virtual string str() const { return string{}; }
+    };
+
+    // we don't want this to be legal, thus a static_assert above
+    //ColoredShape2<NotAShape> legal;
+
+    // no code completion for this case
+    // can comment out argument, too! (default constructor)
+    TransparentShape2<Square> hidden_square{ 1, 2 };
+    cout << hidden_square.str() << endl;
+
+    ColoredShape2<TransparentShape2<Square>> sq = { "red", 51, 5 };
+    cout << sq.str() << endl;
+  }
+
+  void mixin_inheritance()
+  {
+    std::cout << "*** " << __FUNCTION__ << " -----------------------------------------------------------------------------" << std::endl;
+    // won't work without a default constructor
+    ColoredShape2<Circle> green_circle{ "green" };
+    green_circle.radius = 123;
+    cout << green_circle.str() << endl;
+
+    TransparentShape2<ColoredShape2<Square>> blue_invisible_square{ 0 };
+    blue_invisible_square.color = "blue";
+    blue_invisible_square.side = 321;
+    cout << blue_invisible_square.str() << endl;
+  }
+
 }
 
 int main()
 {
-  function_decorator();
-  //wrapper();
-  //mixin_inheritance();
-  //constructor_forwarding();
+  static_decorator::function_decorator();
+  dynamic_decorator::aggregation::class_decorator();
+  static_decorator::mixin_inheritance();
+  static_decorator::constructor_forwarding();
 
-  getchar();
+  // getchar();
   return 0;
 }
